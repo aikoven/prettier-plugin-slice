@@ -1,0 +1,50 @@
+{
+  "name": "prettier-plugin-slice",
+  "version": "0.0.1",
+  "description": "Prettier plugin for the Slice language",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rimraf lib && tsc -P tsconfig.build.json",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "repository": "aikoven/prettier-plugin-slice",
+  "author": "Daniel Lytkin <dan.lytkin@gmail.com>",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "assert-never": "^1.2.0",
+    "prettier": "^1.19.1",
+    "slice2json": "^0.2.1"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/jest": "^24.0.15",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^12.6.8",
+    "@types/prettier": "^1.19.0",
+    "glob": "^7.1.6",
+    "jest": "^24.8.0",
+    "lodash": "^4.17.15",
+    "rimraf": "^2.6.3",
+    "slice2js": "~3.7.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  }
+}

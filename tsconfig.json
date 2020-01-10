@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "lib",
+    "strict": true,
+    "noUnusedLocals": true
+  },
+  "files": ["src/index.ts"],
+  "include": ["src/**/*.spec.ts"]
+}

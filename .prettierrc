@@ -1,0 +1,15 @@
+{
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "trailingComma": "all",
+  "proseWrap": "always",
+  "plugins": ["."],
+  "overrides": [
+    {
+      "files": "*.ice",
+      "options": {
+        "parser": "slice2json"
+      }
+    }
+  ]
+}
