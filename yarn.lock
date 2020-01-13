@@ -2890,10 +2890,10 @@ slice2js@~3.7.2:
   resolved "https://registry.yarnpkg.com/slice2js/-/slice2js-3.7.3.tgz#155ef482fc1e26b624e6a54a59b7797bc309f015"
   integrity sha512-G6czwzrn4l1IW6gQCRKtVAAj4IVXcICPv1qwGgnueuItgijqfHKvGhgBpXb6BDX5MH29aVcNOOrpGTP7zGC9VQ==
 
-slice2json@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/slice2json/-/slice2json-0.3.0.tgz#6e08371ca51fa1fbdee8f68c91cf7f68239c0ec2"
-  integrity sha512-dNQcjM2i3vIcYmBxkW/MihBPq9w7aN95OYOwmrwebXSe0pGEqBXVSRTXbDuFvcvJpjhBRjI5u9sIVjZ9yKhopw==
+slice2json@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/slice2json/-/slice2json-0.3.1.tgz#8d22026d1997cb32281ffe9a0521a7a979f6d5ba"
+  integrity sha512-r5QAF1lO6f6bRDAqU//0bsL1RbMmRNnXLewKeOWht5WOy/L60FjzRWkqXxfgwCvbuxXN9xGJe9SV1nuRyX1vWw==
   dependencies:
     ohm-js "^0.14.0"
 

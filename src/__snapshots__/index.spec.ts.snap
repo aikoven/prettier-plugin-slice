@@ -362,6 +362,11 @@ exports[`Built-in slices Glacier2/SSLInfo.ice 1`] = `
 
 [\\"objc:prefix:GLACIER2\\"]
 module Glacier2 {
+  /**
+   * Information taken from an SSL connection used for permissions verification.
+   *
+   * @see PermissionsVerifier
+   **/
   struct SSLInfo {
     string remoteHost;
 
@@ -1311,14 +1316,29 @@ module Ice {
     [\\"swift:noexcept\\"] void heartbeat(Connection con);
   };
 
+  /**
+   * Specifies the close semantics for Active Connection Management.
+   **/
   local enum ACMClose {
     CloseOff,
     CloseOnIdle,
+    /**
+     * Forcefully closes a connection that has been idle for the configured
+     * timeout period, but only if the connection has pending invocations.
+     **/
     CloseOnInvocation,
     CloseOnInvocationAndIdle,
+    /**
+     * Forcefully closes a connection that has been idle for the configured
+     * timeout period, regardless of whether the connection has pending
+     * invocations or dispatch.
+     **/
     CloseOnIdleForceful
   };
 
+  /**
+   * Specifies the heartbeat semantics for Active Connection Management.
+   **/
   local enum ACMHeartbeat {
     HeartbeatOff,
     HeartbeatOnDispatch,
@@ -1326,6 +1346,9 @@ module Ice {
     HeartbeatAlways
   };
 
+  /**
+   * A collection of Active Connection Management configuration settings.
+   **/
   local struct ACM {
     int timeout;
     ACMClose close;
@@ -1643,10 +1666,38 @@ module Ice {
   dictionary<string, string> Context;
 
   enum OperationMode {
+    /**
+     * Ordinary operations have <code>Normal</code> mode.  These operations
+     * modify object state; invoking such an operation twice in a row has
+     * different semantics than invoking it once. The Ice run time guarantees
+     * that it will not violate at-most-once semantics for
+     * <code>Normal</code> operations.
+     **/
     Normal,
 
+    /**
+     * Operations that use the Slice <code>nonmutating</code> keyword must not
+     * modify object state. For C++, nonmutating operations generate
+     * <code>const</code> member functions in the skeleton. In addition, the Ice
+     * run time will attempt to transparently recover from certain run-time errors
+     * by re-issuing a failed request and propagate the failure to the application
+     * only if the second attempt fails.
+     *
+     * <p class=\\"Deprecated\\"><code>Nonmutating</code> is deprecated; Use the
+     * <code>idempotent</code> keyword instead. For C++, to retain the mapping of
+     * <code>nonmutating</code> operations to C++ <code>const</code> member functions,
+     * use the <code>\\\\[\\"cpp:const\\"]</code> metadata directive.
+     **/
     Nonmutating,
 
+    /**
+     * Operations that use the Slice <code>idempotent</code> keyword can modify
+     * object state, but invoking an operation twice in a row must result in the
+     * same object state as invoking it once.  For example, <code>x = 1</code>
+     * is an idempotent statement, whereas <code>x += 1</code> is not. For
+     * idempotent operations, the Ice run-time uses the same retry behavior as
+     * for nonmutating operations in case of a potentially recoverable error.
+     **/
     Idempotent
   };
 
@@ -1777,6 +1828,10 @@ module Ice {
      **/
     int timeout;
 
+    /**
+     * Specifies whether or not compression should be used if available when
+     * using this endpoint.
+     **/
     bool compress;
 
     /**
@@ -1837,6 +1892,9 @@ module Ice {
      **/
     int port;
 
+    /**
+     * The source IP address.
+     **/
     string sourceAddress;
   };
 
@@ -1947,7 +2005,15 @@ module Ice {
    * proxy when establishing a connection.
    **/
   local enum EndpointSelectionType {
+    /**
+     * <code>Random</code> causes the endpoints to be arranged in a random
+     * order.
+     **/
     Random,
+    /**
+     * <code>Ordered</code> forces the Ice run time to use the endpoints in the
+     * order they appeared in the proxy.
+     **/
     Ordered
   };
 
@@ -3567,6 +3633,12 @@ module Ice {
      **/
     [\\"swift:noexcept\\"] string getPrefix();
 
+    /**
+     * Returns a clone of the logger with a new prefix.
+     *
+     * @param prefix The new prefix for the logger.
+     * @return A logger instance.
+     **/
     [\\"swift:noexcept\\", \\"swift:nonnull\\"] Logger cloneWithPrefix(string prefix);
   };
 
@@ -8418,7 +8490,12 @@ module IceGrid {
   /**
    * This exception is raised if a server does not exist.
    **/
-  exception ServerNotExistException {string id;};
+  exception ServerNotExistException {
+    /**
+     * The identifier of the server.
+     **/
+    string id;
+  };
 
   /**
    * This exception is raised if a server failed to start.
@@ -9871,19 +9948,34 @@ module IceStorm {
    **/
   sequence<LinkInfo> LinkInfoSeq;
 
+  /**
+   * This dictionary represents quality of service parameters.
+   *
+   * @see Topic#subscribeAndGetPublisher
+   **/
   dictionary<string, string> QoS;
 
   /**
    * This exception indicates that an attempt was made to create a link that
    * already exists.
    **/
-  exception LinkExists {string name;};
+  exception LinkExists {
+    /**
+     * The name of the linked topic.
+     **/
+    string name;
+  };
 
   /**
    * This exception indicates that an attempt was made to remove a link that
    * does not exist.
    **/
-  exception NoSuchLink {string name;};
+  exception NoSuchLink {
+    /**
+     * The name of the link that does not exist.
+     **/
+    string name;
+  };
 
   /**
    * This exception indicates that an attempt was made to subscribe a proxy for
@@ -10029,13 +10121,23 @@ module IceStorm {
    * This exception indicates that an attempt was made to create a topic that
    * already exists.
    **/
-  exception TopicExists {string name;};
+  exception TopicExists {
+    /**
+     * The name of the topic that already exists.
+     **/
+    string name;
+  };
 
   /**
    * This exception indicates that an attempt was made to retrieve a topic that
    * does not exist.
    **/
-  exception NoSuchTopic {string name;};
+  exception NoSuchTopic {
+    /**
+     * The name of the topic that does not exist.
+     **/
+    string name;
+  };
 
   /**
    * A topic manager manages topics, and subscribers to topics.
