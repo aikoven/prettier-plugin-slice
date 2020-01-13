@@ -20,15 +20,21 @@ describe('Built-in slices', () => {
       });
 
       expect(formatted).toMatchSnapshot();
-      expect(removeLocations(parse(formatted))).toEqual(
-        removeLocations(parse(slice)),
-      );
+      expect(normalize(parse(formatted))).toEqual(normalize(parse(slice)));
     });
   }
 });
 
-function removeLocations(source: SliceSource) {
-  return cloneDeepWith(source, (value, key) =>
-    key === 'location' ? null : undefined,
-  );
+function normalize(source: SliceSource) {
+  return cloneDeepWith(source, (value, key) => {
+    if (key === 'location') {
+      return null;
+    }
+
+    if (key === 'doc' && typeof value === 'string') {
+      return value.replace(/\s+/g, ' ');
+    }
+
+    return undefined;
+  });
 }
