@@ -32,5 +32,6 @@ export function printSliceSource(
         ])
       : '',
     join(hardline, path.map(print, 'modules')),
+    hardline,
   ]);
 }

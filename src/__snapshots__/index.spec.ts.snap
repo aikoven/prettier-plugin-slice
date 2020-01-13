@@ -58,7 +58,8 @@ module IceMX {
     int overriddenServer = 0;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Glacier2/PermissionsVerifier.ice 1`] = `
@@ -148,7 +149,8 @@ module Glacier2 {
       throws PermissionDeniedException;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Glacier2/PermissionsVerifierF.ice 1`] = `
@@ -168,7 +170,8 @@ module Glacier2 {
   interface PermissionsVerifier;
   interface SSLPermissionsVerifier;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Glacier2/Router.ice 1`] = `
@@ -318,7 +321,8 @@ module Glacier2 {
     [\\"nonmutating\\", \\"cpp:const\\"] idempotent int getACMTimeout();
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Glacier2/RouterF.ice 1`] = `
@@ -337,7 +341,8 @@ exports[`Built-in slices Glacier2/RouterF.ice 1`] = `
 module Glacier2 {
   interface Router;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Glacier2/SSLInfo.ice 1`] = `
@@ -371,7 +376,8 @@ module Glacier2 {
     Ice::StringSeq certs;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Glacier2/Session.ice 1`] = `
@@ -584,7 +590,8 @@ module Glacier2 {
       throws CannotCreateSessionException;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/BuiltinSequences.ice 1`] = `
@@ -622,7 +629,8 @@ module Ice {
 
   sequence<Object*> ObjectProxySeq;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Communicator.ice 1`] = `
@@ -1175,7 +1183,8 @@ module Ice {
     Compat
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/CommunicatorF.ice 1`] = `
@@ -1195,7 +1204,8 @@ exports[`Built-in slices Ice/CommunicatorF.ice 1`] = `
 module Ice {
   local interface Communicator;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Connection.ice 1`] = `
@@ -1577,7 +1587,8 @@ module Ice {
    **/
   local class WSConnectionInfo extends ConnectionInfo {HeaderDict headers;};
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ConnectionF.ice 1`] = `
@@ -1599,7 +1610,8 @@ module Ice {
   local class WSConnectionInfo;
   local interface Connection;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Current.ice 1`] = `
@@ -1690,7 +1702,8 @@ module Ice {
     EncodingVersion encoding;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Endpoint.ice 1`] = `
@@ -1879,7 +1892,8 @@ module Ice {
     ByteSeq rawBytes;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/EndpointF.ice 1`] = `
@@ -1909,7 +1923,8 @@ module Ice {
    **/
   [\\"swift:nonnull\\"] local sequence<Endpoint> EndpointSeq;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/EndpointTypes.ice 1`] = `
@@ -1936,7 +1951,8 @@ module Ice {
     Ordered
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/FacetMap.ice 1`] = `
@@ -1959,7 +1975,8 @@ module Ice {
    **/
   local dictionary<string, [\\"swift:nonnull\\"] Object> FacetMap;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Identity.ice 1`] = `
@@ -2004,7 +2021,8 @@ module Ice {
    **/
   sequence<Identity> IdentitySeq;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ImplicitContext.ice 1`] = `
@@ -2107,7 +2125,8 @@ module Ice {
      **/
     [\\"swift:noexcept\\"] string remove(string key);
   };
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ImplicitContextF.ice 1`] = `
@@ -2127,7 +2146,8 @@ exports[`Built-in slices Ice/ImplicitContextF.ice 1`] = `
 module Ice {
   local interface ImplicitContext;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Instrumentation.ice 1`] = `
@@ -2540,7 +2560,8 @@ module Ice {
 
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/InstrumentationF.ice 1`] = `
@@ -2565,7 +2586,8 @@ module Ice {
 
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/LocalException.ice 1`] = `
@@ -3271,7 +3293,8 @@ module Ice {
    **/
   [\\"cpp:ice_print\\"] local exception ResponseSentException {};
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Locator.ice 1`] = `
@@ -3456,7 +3479,8 @@ module Ice {
     Locator* getLocator();
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/LocatorF.ice 1`] = `
@@ -3477,7 +3501,8 @@ module Ice {
   interface Locator;
   interface LocatorRegistry;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Logger.ice 1`] = `
@@ -3545,7 +3570,8 @@ module Ice {
     [\\"swift:noexcept\\", \\"swift:nonnull\\"] Logger cloneWithPrefix(string prefix);
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/LoggerF.ice 1`] = `
@@ -3565,7 +3591,8 @@ exports[`Built-in slices Ice/LoggerF.ice 1`] = `
 module Ice {
   local interface Logger;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Metrics.ice 1`] = `
@@ -3873,7 +3900,8 @@ module IceMX {
     long sentBytes = 0;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ObjectAdapter.ice 1`] = `
@@ -4501,7 +4529,8 @@ module Ice {
 
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ObjectAdapterF.ice 1`] = `
@@ -4521,7 +4550,8 @@ exports[`Built-in slices Ice/ObjectAdapterF.ice 1`] = `
 module Ice {
   local interface ObjectAdapter;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ObjectFactory.ice 1`] = `
@@ -4571,7 +4601,8 @@ module Ice {
     void destroy();
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Plugin.ice 1`] = `
@@ -4670,7 +4701,8 @@ module Ice {
     [\\"cpp:noexcept\\", \\"swift:noexcept\\"] void destroy();
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/PluginF.ice 1`] = `
@@ -4691,7 +4723,8 @@ module Ice {
   local interface Plugin;
   local interface PluginManager;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Process.ice 1`] = `
@@ -4737,7 +4770,8 @@ module Ice {
     void writeMessage(string message, int fd);
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ProcessF.ice 1`] = `
@@ -4757,7 +4791,8 @@ exports[`Built-in slices Ice/ProcessF.ice 1`] = `
 module Ice {
   interface Process;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Properties.ice 1`] = `
@@ -4952,7 +4987,8 @@ module Ice {
     [\\"cpp:noexcept\\", \\"swift:noexcept\\", \\"swift:nonnull\\"] Properties clone();
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/PropertiesAdmin.ice 1`] = `
@@ -5018,7 +5054,8 @@ module Ice {
     void setProperties(PropertyDict newProperties);
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/PropertiesF.ice 1`] = `
@@ -5039,7 +5076,8 @@ module Ice {
   local interface Properties;
   interface PropertiesAdmin;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/RemoteLogger.ice 1`] = `
@@ -5224,7 +5262,8 @@ module Ice {
     );
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Router.ice 1`] = `
@@ -5302,7 +5341,8 @@ module Ice {
     Router* getRouter();
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/RouterF.ice 1`] = `
@@ -5322,7 +5362,8 @@ exports[`Built-in slices Ice/RouterF.ice 1`] = `
 module Ice {
   interface Router;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ServantLocator.ice 1`] = `
@@ -5442,7 +5483,8 @@ module Ice {
     [\\"swift:noexcept\\"] void deactivate(string category);
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ServantLocatorF.ice 1`] = `
@@ -5462,7 +5504,8 @@ exports[`Built-in slices Ice/ServantLocatorF.ice 1`] = `
 module Ice {
   local interface ServantLocator;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/SliceChecksumDict.ice 1`] = `
@@ -5487,7 +5530,8 @@ module Ice {
    **/
   dictionary<string, string> SliceChecksumDict;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/ValueFactory.ice 1`] = `
@@ -5596,7 +5640,8 @@ module Ice {
     [\\"cpp:const\\", \\"cpp:noexcept\\", \\"swift:noexcept\\"]
     ValueFactory find(string id);
   };
-};"
+};
+"
 `;
 
 exports[`Built-in slices Ice/Version.ice 1`] = `
@@ -5630,7 +5675,8 @@ module Ice {
     byte minor;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceBT/ConnectionInfo.ice 1`] = `
@@ -5668,7 +5714,8 @@ module IceBT {
     int sndSize = 0;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceBT/EndpointInfo.ice 1`] = `
@@ -5705,7 +5752,8 @@ module IceBT {
     string uuid;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceBT/Types.ice 1`] = `
@@ -5730,7 +5778,8 @@ module IceBT {
    **/
   [\\"cpp:ice_print\\"] local exception BluetoothException {string reason;};
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceBox/IceBox.ice 1`] = `
@@ -5884,7 +5933,8 @@ module IceBox {
     void shutdown();
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceDiscovery/IceDiscovery.ice 1`] = `
@@ -5921,7 +5971,8 @@ module IceDiscovery {
     );
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceGrid/Admin.ice 1`] = `
@@ -7565,7 +7616,8 @@ module IceGrid {
 
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceGrid/Descriptor.ice 1`] = `
@@ -8330,7 +8382,8 @@ module IceGrid {
     Ice::StringSeq removeNodes;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceGrid/Exception.ice 1`] = `
@@ -8592,7 +8645,8 @@ module IceGrid {
     string reason;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceGrid/FileParser.ice 1`] = `
@@ -8639,7 +8693,8 @@ module IceGrid {
       throws ParseException;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceGrid/PluginFacade.ice 1`] = `
@@ -8930,7 +8985,8 @@ module IceGrid {
     bool removeTypeFilter(string type, TypeFilter filter);
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceGrid/Registry.ice 1`] = `
@@ -9150,7 +9206,8 @@ module IceGrid {
     [\\"cpp:const\\"] idempotent Query* getLocalQuery();
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceGrid/Session.ice 1`] = `
@@ -9253,7 +9310,8 @@ module IceGrid {
     idempotent void setAllocationTimeout(int timeout);
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceGrid/UserAccountMapper.ice 1`] = `
@@ -9300,7 +9358,8 @@ module IceGrid {
     string getUserAccount(string user) throws UserAccountNotFoundException;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceIAP/ConnectionInfo.ice 1`] = `
@@ -9352,7 +9411,8 @@ module IceIAP {
     string protocol;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceIAP/EndpointInfo.ice 1`] = `
@@ -9397,7 +9457,8 @@ module IceIAP {
     string protocol;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceLocatorDiscovery/IceLocatorDiscovery.ice 1`] = `
@@ -9458,7 +9519,8 @@ module IceLocatorDiscovery {
     idempotent void findLocator(string instanceName, LookupReply* reply);
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IcePatch2/FileInfo.ice 1`] = `
@@ -9514,7 +9576,8 @@ module IcePatch2 {
    **/
   sequence<LargeFileInfo> LargeFileInfoSeq;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IcePatch2/FileServer.ice 1`] = `
@@ -9670,7 +9733,8 @@ module IcePatch2 {
       throws FileAccessException;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceSSL/ConnectionInfo.ice 1`] = `
@@ -9703,7 +9767,8 @@ module IceSSL {
     bool verified;
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceSSL/ConnectionInfoF.ice 1`] = `
@@ -9723,7 +9788,8 @@ exports[`Built-in slices IceSSL/ConnectionInfoF.ice 1`] = `
 module IceSSL {
   local class ConnectionInfo;
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceSSL/EndpointInfo.ice 1`] = `
@@ -9748,7 +9814,8 @@ module IceSSL {
    **/
   local class EndpointInfo extends Ice::EndpointInfo {};
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceStorm/IceStorm.ice 1`] = `
@@ -10029,7 +10096,8 @@ module IceStorm {
     TopicManager* getTopicManager();
   };
 
-};"
+};
+"
 `;
 
 exports[`Built-in slices IceStorm/Metrics.ice 1`] = `
@@ -10084,5 +10152,6 @@ module IceMX {
     long delivered = 0;
   };
 
-};"
+};
+"
 `;
