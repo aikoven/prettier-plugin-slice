@@ -22,6 +22,7 @@ export function printClass(
         val.local ? 'local ' : '',
         'class ',
         val.name,
+        val.compactTypeId != null ? `(${val.compactTypeId})` : '',
         val.extends ? indent(concat([line, 'extends ', val.extends])) : '',
       ]),
       groupConcat([
