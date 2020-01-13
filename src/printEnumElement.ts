@@ -3,7 +3,7 @@ import {EnumElement, EnumDeclaration} from 'slice2json';
 import {groupConcat} from './utils/groupConcat';
 import {printDoc} from './printDoc';
 
-const {concat, hardline, line, indent} = doc.builders;
+const {concat, hardline, line, indent, ifBreak} = doc.builders;
 const {isNextLineEmpty} = util;
 
 export function printEnumElement(
@@ -22,8 +22,8 @@ export function printEnumElement(
     groupConcat([
       val.name,
       val.value != null ? indent(concat([line, '= ', val.value])) : '',
-      isLastElement ? '' : ',',
     ]),
+    isLastElement ? ifBreak(',', '') : ',',
     isNextLineEmpty(options.originalText, path.getNode(), options)
       ? hardline
       : '',

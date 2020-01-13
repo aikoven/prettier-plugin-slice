@@ -1185,7 +1185,7 @@ module Ice {
      * and below are encoded as \\\\\\\\t, \\\\\\\\n (etc.) or an octal escape. Use this
      * mode to generate strings compatible with Ice 3.6 and earlier.
      **/
-    Compat
+    Compat,
   };
 
 };
@@ -1251,7 +1251,7 @@ module Ice {
      * Compress the batch requests if at least one request was made on a
      * compressed proxy.
      **/
-    BasedOnProxy
+    BasedOnProxy,
   };
 
   /**
@@ -1333,7 +1333,7 @@ module Ice {
      * timeout period, regardless of whether the connection has pending
      * invocations or dispatch.
      **/
-    CloseOnIdleForceful
+    CloseOnIdleForceful,
   };
 
   /**
@@ -1343,7 +1343,7 @@ module Ice {
     HeartbeatOff,
     HeartbeatOnDispatch,
     HeartbeatOnIdle,
-    HeartbeatAlways
+    HeartbeatAlways,
   };
 
   /**
@@ -1375,7 +1375,7 @@ module Ice {
      * Wait for all pending invocations to complete before closing the
      * connection.
      **/
-    GracefullyWithWait
+    GracefullyWithWait,
   };
 
   /**
@@ -1698,7 +1698,7 @@ module Ice {
      * idempotent operations, the Ice run-time uses the same retry behavior as
      * for nonmutating operations in case of a potentially recoverable error.
      **/
-    Idempotent
+    Idempotent,
   };
 
   /**
@@ -2014,7 +2014,7 @@ module Ice {
      * <code>Ordered</code> forces the Ice run time to use the endpoints in the
      * order they appeared in the proxy.
      **/
-    Ordered
+    Ordered,
   };
 
 };
@@ -2292,7 +2292,7 @@ module Ice {
        * The thread is performing other internal activities (DNS lookups, timer
        * callbacks, etc).
        **/
-      ThreadStateInUseForOther
+      ThreadStateInUseForOther,
     };
 
     /**
@@ -2339,7 +2339,7 @@ module Ice {
        * The connection is closed and waits for potential dispatch to be
        * finished before being destroyed and detached from the observer.
        **/
-      ConnectionStateClosed
+      ConnectionStateClosed,
     };
 
     /**
@@ -5192,7 +5192,7 @@ module Ice {
     /**
      * The {@link Logger} received an error message.
      **/
-    ErrorMessage
+    ErrorMessage,
   };
 
   /**
@@ -6111,7 +6111,7 @@ module IceGrid {
     /**
      * The server is destroyed.
      **/
-    Destroyed
+    Destroyed,
   };
 
   /**
@@ -9104,7 +9104,7 @@ module IceGrid {
     /**
      * Sample every fifteen minutes.
      **/
-    LoadSample15
+    LoadSample15,
   };
 
   /**

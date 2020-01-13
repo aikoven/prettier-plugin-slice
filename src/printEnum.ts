@@ -23,12 +23,7 @@ export function printEnum(
       val.name,
       groupConcat([
         ' {',
-        indent(
-          concat([
-            line,
-            join(hardline, path.map(print, 'enums')),
-          ]),
-        ),
+        indent(concat([line, join(line, path.map(print, 'enums'))])),
         line,
         '};',
       ]),
