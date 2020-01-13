@@ -1608,7 +1608,9 @@ module Ice {
   /**
    * Provides access to the connection details of a WebSocket connection
    **/
-  local class WSConnectionInfo extends ConnectionInfo {HeaderDict headers;};
+  local class WSConnectionInfo extends ConnectionInfo {
+    HeaderDict headers;
+  };
 
 };
 "
@@ -3035,7 +3037,9 @@ module Ice {
    * This exception indicates file errors.
    **/
   [\\"cpp:ice_print\\"]
-  local exception FileException extends SyscallException {string path;};
+  local exception FileException extends SyscallException {
+    string path;
+  };
 
   /**
    * This exception indicates connection failures.
@@ -3218,7 +3222,9 @@ module Ice {
    * @see Connection#close
    **/
   [\\"cpp:ice_print\\"]
-  local exception ConnectionManuallyClosedException {bool graceful;};
+  local exception ConnectionManuallyClosedException {
+    bool graceful;
+  };
 
   /**
    * This exception indicates that a message size is less than the minimum
@@ -5848,7 +5854,10 @@ module IceBT {
   /**
    * Indicates a failure in the Bluetooth plug-in.
    **/
-  [\\"cpp:ice_print\\"] local exception BluetoothException {string reason;};
+  [\\"cpp:ice_print\\"]
+  local exception BluetoothException {
+    string reason;
+  };
 
 };
 "
@@ -7919,7 +7928,8 @@ module IceGrid {
   struct DistributionDescriptor {
     string icepatch;
 
-    [\\"java:type:java.util.LinkedList<String>\\"] Ice::StringSeq directories;
+    [\\"java:type:java.util.LinkedList<String>\\"]
+    Ice::StringSeq directories;
   };
 
   /**
@@ -7952,12 +7962,14 @@ module IceGrid {
     /**
      * The command line options to pass to the server executable.
      **/
-    [\\"java:type:java.util.LinkedList<String>\\"] Ice::StringSeq options;
+    [\\"java:type:java.util.LinkedList<String>\\"]
+    Ice::StringSeq options;
 
     /**
      * The server environment variables.
      **/
-    [\\"java:type:java.util.LinkedList<String>\\"] Ice::StringSeq envs;
+    [\\"java:type:java.util.LinkedList<String>\\"]
+    Ice::StringSeq envs;
 
     /**
      * The server activation mode (possible values are \\"on-demand\\" or
@@ -8070,7 +8082,8 @@ module IceGrid {
     /**
      * The parameters required to instantiate the template.
      **/
-    [\\"java:type:java.util.LinkedList<String>\\"] Ice::StringSeq parameters;
+    [\\"java:type:java.util.LinkedList<String>\\"]
+    Ice::StringSeq parameters;
 
     /**
      * The parameters default values.
@@ -8132,7 +8145,8 @@ module IceGrid {
     /**
      * The variables defined for the node.
      **/
-    [\\"java:type:java.util.TreeMap<String, String>\\"] StringStringDict variables;
+    [\\"java:type:java.util.TreeMap<String, String>\\"]
+    StringStringDict variables;
 
     /**
      * The server instances.
@@ -8256,7 +8270,8 @@ module IceGrid {
     /**
      * The variables defined in the application descriptor.
      **/
-    [\\"java:type:java.util.TreeMap<String, String>\\"] StringStringDict variables;
+    [\\"java:type:java.util.TreeMap<String, String>\\"]
+    StringStringDict variables;
 
     /**
      * The replica groups.
@@ -8303,7 +8318,9 @@ module IceGrid {
   /**
    * A \\"boxed\\" string.
    **/
-  class BoxedString {string value;};
+  class BoxedString {
+    string value;
+  };
 
   /**
    * A node update descriptor to describe the updates to apply to a node of a
@@ -8323,7 +8340,8 @@ module IceGrid {
     /**
      * The variables to update.
      **/
-    [\\"java:type:java.util.TreeMap<String, String>\\"] StringStringDict variables;
+    [\\"java:type:java.util.TreeMap<String, String>\\"]
+    StringStringDict variables;
 
     /**
      * The variables to remove.
@@ -8371,7 +8389,9 @@ module IceGrid {
   /**
    * A \\"boxed\\" distribution descriptor.
    **/
-  class BoxedDistributionDescriptor {DistributionDescriptor value;};
+  class BoxedDistributionDescriptor {
+    DistributionDescriptor value;
+  };
 
   /**
    * An application update descriptor to describe the updates to apply to a
@@ -8396,7 +8416,8 @@ module IceGrid {
     /**
      * The variables to update.
      **/
-    [\\"java:type:java.util.TreeMap<String, String>\\"] StringStringDict variables;
+    [\\"java:type:java.util.TreeMap<String, String>\\"]
+    StringStringDict variables;
 
     /**
      * The variables to remove.
@@ -8747,7 +8768,9 @@ module IceGrid {
   /**
    * This exception is raised if an error occurs during parsing.
    **/
-  exception ParseException {string reason;};
+  exception ParseException {
+    string reason;
+  };
 
   /**
    * <code>icegridadmin</code> provides a {@link FileParser} object to transform
@@ -10254,6 +10277,33 @@ module IceMX {
     long delivered = 0;
   };
 
+};
+"
+`;
+
+exports[`Slices classes.ice 1`] = `
+"#pragma once
+
+module Test {
+  class Empty {};
+
+  class NonEmpty {
+    string field;
+  };
+};
+"
+`;
+
+exports[`Slices enums.ice 1`] = `
+"#pragma once
+
+module Test {
+  enum Empty {};
+
+  enum NonEmpty {
+    One,
+    Two,
+  };
 };
 "
 `;

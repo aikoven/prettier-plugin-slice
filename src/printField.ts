@@ -18,7 +18,9 @@ export function printField(
     val.doc != null ? concat([printDoc(val.doc), hardline]) : '',
     // metadata <break> rest
     groupConcat([
-      val.metadata != null ? concat([printMetadata(val.metadata), line]) : '',
+      val.metadata != null
+        ? concat([printMetadata(val.metadata), hardline])
+        : '',
       // rest <break> = default
       groupConcat([
         // type <break> name

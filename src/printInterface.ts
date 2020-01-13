@@ -38,7 +38,12 @@ export function printInterface(
       ]),
       groupConcat([
         ' {',
-        indent(concat([softline, join(hardline, path.map(print, 'content'))])),
+        indent(
+          concat([
+            val.content.length === 0 ? '' : hardline,
+            join(hardline, path.map(print, 'content')),
+          ]),
+        ),
         softline,
         '};',
       ]),

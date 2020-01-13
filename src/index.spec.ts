@@ -25,6 +25,27 @@ describe('Built-in slices', () => {
   }
 });
 
+describe('Slices', () => {
+  const sliceDir = 'fixtures';
+
+  const slices = sync('**/*.ice', {
+    cwd: sliceDir,
+  });
+
+  for (const slicePath of slices) {
+    test(slicePath, () => {
+      const slice = fs.readFileSync(`${sliceDir}/${slicePath}`, 'utf-8');
+      const formatted = format(slice, {
+        parser: 'slice2json' as any,
+        plugins: ['.'],
+      });
+
+      expect(formatted).toMatchSnapshot();
+      expect(normalize(parse(formatted))).toEqual(normalize(parse(slice)));
+    });
+  }
+});
+
 function normalize(source: SliceSource) {
   return cloneDeepWith(source, (value, key) => {
     if (key === 'location') {

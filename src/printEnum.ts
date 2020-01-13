@@ -4,7 +4,7 @@ import {printDoc} from './printDoc';
 import {groupConcat} from './utils/groupConcat';
 import {printMetadata} from './printMetadata';
 
-const {concat, hardline, line, indent, join} = doc.builders;
+const {concat, hardline, line, indent, softline, join} = doc.builders;
 const {isNextLineEmpty} = util;
 
 export function printEnum(
@@ -23,8 +23,13 @@ export function printEnum(
       val.name,
       groupConcat([
         ' {',
-        indent(concat([line, join(line, path.map(print, 'enums'))])),
-        line,
+        indent(
+          concat([
+            val.enums.length === 0 ? '' : hardline,
+            join(hardline, path.map(print, 'enums')),
+          ]),
+        ),
+        softline,
         '};',
       ]),
     ]),

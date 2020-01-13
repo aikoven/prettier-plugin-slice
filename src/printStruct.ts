@@ -23,7 +23,12 @@ export function printStruct(
       val.name,
       groupConcat([
         ' {',
-        indent(concat([softline, join(hardline, path.map(print, 'fields'))])),
+        indent(
+          concat([
+            val.fields.length === 0 ? '' : hardline,
+            join(hardline, path.map(print, 'fields')),
+          ]),
+        ),
         softline,
         '};',
       ]),

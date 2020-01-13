@@ -19,7 +19,12 @@ export function printModule(
       val.metadata != null ? concat([printMetadata(val.metadata), line]) : '',
       groupConcat([
         `module ${val.name} {`,
-        indent(concat([softline, join(hardline, path.map(print, 'content'))])),
+        indent(
+          concat([
+            val.content.length === 0 ? '' : hardline,
+            join(hardline, path.map(print, 'content')),
+          ]),
+        ),
         softline,
         `};`,
       ]),
