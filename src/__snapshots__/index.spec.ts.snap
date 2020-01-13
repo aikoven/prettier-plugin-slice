@@ -222,10 +222,10 @@ module Glacier2 {
     [\\"nonmutating\\", \\"cpp:const\\"] idempotent string getCategoryForClient();
 
     /**
-     * Create a per-client session with the router. If a
-     * {@link SessionManager} has been installed, a proxy to a {@link Session} object
-     * is returned to the client. Otherwise, null is returned and only an internal
-     * session (i.e., not visible to the client) is created.
+     * Create a per-client session with the router. If a {@link SessionManager}
+     * has been installed, a proxy to a {@link Session} object is returned to
+     * the client. Otherwise, null is returned and only an internal session
+     * (i.e., not visible to the client) is created.
      *
      * If a session proxy is returned, it must be configured to route through
      * the router that created it. This will happen automatically if the router
@@ -237,8 +237,8 @@ module Glacier2 {
      * @see SessionManager
      * @see PermissionsVerifier
      *
-     * @return A proxy for the newly created session, or null if no
-     * {@link SessionManager} has been installed.
+     * @return A proxy for the newly created session, or null if no {@link
+     * SessionManager} has been installed.
      *
      * @param userId The user id for which to check the password.
      *
@@ -272,8 +272,8 @@ module Glacier2 {
      * @see SessionManager
      * @see PermissionsVerifier
      *
-     * @return A proxy for the newly created session, or null if no
-     * {@link SessionManager} has been installed.
+     * @return A proxy for the newly created session, or null if no {@link
+     * SessionManager} has been installed.
      *
      * @throws PermissionDeniedException Raised if the user cannot be
      * authenticated or if the user is not allowed access.
@@ -432,8 +432,7 @@ module Glacier2 {
 
   /**
    * An object for managing the set of identity constraints for specific parts
-   * of object identity on a
-   * {@link Session}.
+   * of object identity on a {@link Session}.
    *
    * @see Session
    * @see SessionControl
@@ -464,8 +463,8 @@ module Glacier2 {
   };
 
   /**
-   * An object for managing the set of object identity constraints on a
-   * {@link Session}.
+   * An object for managing the set of object identity constraints on a {@link
+   * Session}.
    *
    * @see Session
    * @see SessionControl
@@ -737,14 +736,14 @@ module Ice {
 
     /**
      * Convert a stringified proxy into a proxy. For example,
-     * <code>MyCategory/MyObject:tcp -h some_host -p
-     * 10000</code> creates a proxy that refers to the Ice object having an
-     * identity with a name \\"MyObject\\" and a category
-     * \\"MyCategory\\", with the server running on host \\"some_host\\", port
-     * 10000. If the stringified proxy does not parse correctly, the operation
-     * throws one of ProxyParseException, EndpointParseException, or
-     * IdentityParseException. Refer to the Ice manual for a detailed
-     * description of the syntax supported by stringified proxies.
+     * <code>MyCategory/MyObject:tcp -h some_host -p 10000</code> creates a
+     * proxy that refers to the Ice object having an identity with a name
+     * \\"MyObject\\" and a category \\"MyCategory\\", with the server running on host
+     * \\"some_host\\", port 10000. If the stringified proxy does not parse
+     * correctly, the operation throws one of ProxyParseException,
+     * EndpointParseException, or IdentityParseException. Refer to the Ice
+     * manual for a detailed description of the syntax supported by stringified
+     * proxies.
      *
      * @param str The stringified proxy to convert into a proxy.
      *
@@ -759,8 +758,8 @@ module Ice {
      *
      * @param obj The proxy to convert into a stringified proxy.
      *
-     * @return The stringified proxy, or an empty string if
-     * <code>obj</code> is nil.
+     * @return The stringified proxy, or an empty string if <code>obj</code> is
+     * nil.
      *
      * @see #stringToProxy
      **/
@@ -769,11 +768,11 @@ module Ice {
     /**
      * Convert a set of proxy properties into a proxy. The \\"base\\" name supplied
      * in the <code>property</code> argument refers to a property containing a
-     * stringified proxy, such as
-     * <code>MyProxy=id:tcp -h localhost -p 10000</code>. Additional properties configure
-     * local settings for the proxy, such as
-     * <code>MyProxy.PreferSecure=1</code>. The \\"Properties\\" appendix in the Ice
-     * manual describes each of the supported proxy properties.
+     * stringified proxy, such as <code>MyProxy=id:tcp -h localhost -p
+     * 10000</code>. Additional properties configure local settings for the
+     * proxy, such as <code>MyProxy.PreferSecure=1</code>. The \\"Properties\\"
+     * appendix in the Ice manual describes each of the supported proxy
+     * properties.
      *
      * @param property The base property name.
      *
@@ -844,8 +843,8 @@ module Ice {
 
     /**
      * Create a new object adapter with endpoints. This operation sets the
-     * property <code><em>name</em>.Endpoints</code>, and then calls
-     * {@link #createObjectAdapter}. It is provided as a convenience function.
+     * property <code><em>name</em>.Endpoints</code>, and then calls {@link
+     * #createObjectAdapter}. It is provided as a convenience function.
      *
      * Calling this operation with an empty name will result in a UUID being
      * generated for the name.
@@ -916,13 +915,11 @@ module Ice {
      * type.</li>
      *
      * <li>If no instance has been created, the Ice run-time looks for the
-     * default factory, which is registered with an empty type id.
-     * </li>
+     * default factory, which is registered with an empty type id. </li>
      *
      * <li>If no instance has been created by any of the preceding steps, the
      * Ice run-time looks for a factory that may have been statically generated
-     * by the language mapping for non-abstract classes.
-     * </li>
+     * by the language mapping for non-abstract classes. </li>
      *
      * </ol>
      *
@@ -1541,11 +1538,10 @@ module Ice {
 
     /**
      * Throw an exception indicating the reason for connection closure. For
-     * example,
-     * {@link CloseConnectionException} is raised if the connection was closed gracefully,
-     * whereas {@link ConnectionManuallyClosedException} is raised if the connection
-     * was manually closed by the application. This operation does nothing if the
-     * connection is not yet closed.
+     * example, {@link CloseConnectionException} is raised if the connection was
+     * closed gracefully, whereas {@link ConnectionManuallyClosedException} is
+     * raised if the connection was manually closed by the application. This
+     * operation does nothing if the connection is not yet closed.
      **/
     [\\"cpp:const\\"] void throwException();
   };
@@ -1661,9 +1657,9 @@ exports[`Built-in slices Ice/Current.ice 1`] = `
 module Ice {
   /**
    * A request context. <code>Context</code> is used to transmit metadata about
-   * a request from the server to the client, such as Quality-of-Service
-   * (QoS) parameters. Each operation on the client has a <code>Context</code> as
-   * its implicit final parameter.
+   * a request from the server to the client, such as Quality-of-Service (QoS)
+   * parameters. Each operation on the client has a <code>Context</code> as its
+   * implicit final parameter.
    **/
   dictionary<string, string> Context;
 
@@ -1672,8 +1668,8 @@ module Ice {
      * Ordinary operations have <code>Normal</code> mode.  These operations
      * modify object state; invoking such an operation twice in a row has
      * different semantics than invoking it once. The Ice run time guarantees
-     * that it will not violate at-most-once semantics for
-     * <code>Normal</code> operations.
+     * that it will not violate at-most-once semantics for <code>Normal</code>
+     * operations.
      **/
     Normal,
 
@@ -1681,14 +1677,14 @@ module Ice {
      * Operations that use the Slice <code>nonmutating</code> keyword must not
      * modify object state. For C++, nonmutating operations generate
      * <code>const</code> member functions in the skeleton. In addition, the Ice
-     * run time will attempt to transparently recover from certain run-time errors
-     * by re-issuing a failed request and propagate the failure to the application
-     * only if the second attempt fails.
+     * run time will attempt to transparently recover from certain run-time
+     * errors by re-issuing a failed request and propagate the failure to the
+     * application only if the second attempt fails.
      *
      * <p class=\\"Deprecated\\"><code>Nonmutating</code> is deprecated; Use the
-     * <code>idempotent</code> keyword instead. For C++, to retain the mapping of
-     * <code>nonmutating</code> operations to C++ <code>const</code> member functions,
-     * use the <code>\\\\[\\"cpp:const\\"]</code> metadata directive.
+     * <code>idempotent</code> keyword instead. For C++, to retain the mapping
+     * of <code>nonmutating</code> operations to C++ <code>const</code> member
+     * functions, use the <code>\\\\[\\"cpp:const\\"]</code> metadata directive.
      **/
     Nonmutating,
 
@@ -2120,16 +2116,11 @@ module Ice {
    *
    * Ice provides several implementations of <code>ImplicitContext</code>. The
    * implementation used depends on the value of the
-   * <code>Ice.ImplicitContext</code> property.
-   * <dl>
-   * <dt><code>None</code> (default)</dt>
-   * <dd>No implicit context at all.</dd>
-   * <dt><code>PerThread</code></dt>
-   * <dd>The implementation maintains a context per thread.</dd>
-   * <dt><code>Shared</code></dt>
-   * <dd>The implementation maintains a single context shared by all threads.</dd>
-   *
-   * </dl>
+   * <code>Ice.ImplicitContext</code> property. <dl> <dt><code>None</code>
+   * (default)</dt> <dd>No implicit context at all.</dd>
+   * <dt><code>PerThread</code></dt> <dd>The implementation maintains a context
+   * per thread.</dd> <dt><code>Shared</code></dt> <dd>The implementation
+   * maintains a single context shared by all threads.</dd> </dl>
    *
    * <code>ImplicitContext</code> also provides a number of operations to
    * create, update or retrieve an entry in the underlying context without first
@@ -2163,9 +2154,9 @@ module Ice {
 
     /**
      * Get the value associated with the given key in the underlying context.
-     * Returns an empty string if no value is associated with the key.
-     * {@link #containsKey} allows you to distinguish between an empty-string value
-     * and no value at all.
+     * Returns an empty string if no value is associated with the key. {@link
+     * #containsKey} allows you to distinguish between an empty-string value and
+     * no value at all.
      *
      * @param key The key.
      *
@@ -2462,14 +2453,13 @@ module Ice {
     /**
      * The observer updater interface. This interface is implemented by the Ice
      * run-time and an instance of this interface is provided by the Ice
-     * communicator on initialization to the
-     * {@link CommunicatorObserver} object set with the communicator initialization
-     * data. The Ice communicator calls
+     * communicator on initialization to the {@link CommunicatorObserver} object
+     * set with the communicator initialization data. The Ice communicator calls
      * {@link CommunicatorObserver#setObserverUpdater} to provide the observer
      * updater.
      *
-     * This interface can be used by add-ins implementing the
-     * {@link CommunicatorObserver} interface to update the observers of connections
+     * This interface can be used by add-ins implementing the {@link
+     * CommunicatorObserver} interface to update the observers of connections
      * and threads.
      **/
     local interface ObserverUpdater {
@@ -2538,8 +2528,8 @@ module Ice {
       /**
        * This method should return a connection observer for the given
        * connection. The Ice run-time calls this method for each new connection
-       * and for all the Ice communicator connections when
-       * {@link ObserverUpdater#updateConnectionObservers} is called.
+       * and for all the Ice communicator connections when {@link
+       * ObserverUpdater#updateConnectionObservers} is called.
        *
        * @param c The connection information.
        *
@@ -2562,8 +2552,8 @@ module Ice {
       /**
        * This method should return a thread observer for the given thread. The
        * Ice run-time calls this method for each new thread and for all the Ice
-       * communicator threads when
-       * {@link ObserverUpdater#updateThreadObservers} is called.
+       * communicator threads when {@link ObserverUpdater#updateThreadObservers}
+       * is called.
        *
        * @param parent The parent of the thread.
        *
@@ -2719,9 +2709,9 @@ module Ice {
   local exception AlreadyRegisteredException {
     /**
      * The kind of object that could not be removed: \\"servant\\", \\"facet\\",
-     * \\"object\\", \\"default servant\\", \\"servant locator\\", \\"value factory\\", \\"plugin\\",
-     *
-     * \\"object adapter\\", \\"object adapter with router\\", \\"replica group\\".
+     * \\"object\\", \\"default servant\\", \\"servant locator\\", \\"value factory\\",
+     * \\"plugin\\", \\"object adapter\\", \\"object adapter with router\\", \\"replica
+     * group\\".
      **/
     string kindOfObject;
 
@@ -2746,9 +2736,9 @@ module Ice {
   local exception NotRegisteredException {
     /**
      * The kind of object that could not be removed: \\"servant\\", \\"facet\\",
-     * \\"object\\", \\"default servant\\", \\"servant locator\\", \\"value factory\\", \\"plugin\\",
-     *
-     * \\"object adapter\\", \\"object adapter with router\\", \\"replica group\\".
+     * \\"object\\", \\"default servant\\", \\"servant locator\\", \\"value factory\\",
+     * \\"plugin\\", \\"object adapter\\", \\"object adapter with router\\", \\"replica
+     * group\\".
      **/
     string kindOfObject;
 
@@ -2789,8 +2779,7 @@ module Ice {
    * This exception is raised if an operation call on a server raises an unknown
    * exception. For example, for C++, this exception is raised if the server
    * throws a C++ exception that is not directly or indirectly derived from
-   * <code>Ice::LocalException</code> or
-   * <code>Ice::UserException</code>.
+   * <code>Ice::LocalException</code> or <code>Ice::UserException</code>.
    **/
   [\\"cpp:ice_print\\"]
   local exception UnknownException {
@@ -2817,14 +2806,12 @@ module Ice {
    * An operation raised an incorrect user exception.
    *
    * This exception is raised if an operation raises a user exception that is
-   * not declared in the exception's
-   * <code>throws</code> clause. Such undeclared exceptions are not transmitted from
-   * the server to the client by the Ice protocol, but instead the client just gets
-   * an
-   * {@link UnknownUserException}. This is necessary in order to not violate the
-   * contract established by an operation's signature: Only local exceptions and
-   * user exceptions declared in the
-   * <code>throws</code> clause can be raised.
+   * not declared in the exception's <code>throws</code> clause. Such undeclared
+   * exceptions are not transmitted from the server to the client by the Ice
+   * protocol, but instead the client just gets an {@link UnknownUserException}.
+   * This is necessary in order to not violate the contract established by an
+   * operation's signature: Only local exceptions and user exceptions declared
+   * in the <code>throws</code> clause can be raised.
    **/
   [\\"cpp:ice_print\\"]
   local exception UnknownUserException extends UnknownException {};
@@ -2843,8 +2830,8 @@ module Ice {
   [\\"cpp:ice_print\\"] local exception CommunicatorDestroyedException {};
 
   /**
-   * This exception is raised if an attempt is made to use a deactivated
-   * {@link ObjectAdapter}.
+   * This exception is raised if an attempt is made to use a deactivated {@link
+   * ObjectAdapter}.
    *
    * @see ObjectAdapter#deactivate
    * @see Communicator#shutdown
@@ -2966,8 +2953,7 @@ module Ice {
   /**
    * This exception is raised if a request failed. This exception, and all
    * exceptions derived from {@link RequestFailedException}, are transmitted by
-   * the Ice protocol, even though they are declared
-   * <code>local</code>.
+   * the Ice protocol, even though they are declared <code>local</code>.
    **/
   [\\"cpp:ice_print\\"]
   local exception RequestFailedException {
@@ -3010,8 +2996,7 @@ module Ice {
     /**
      * The error number describing the system exception. For C++ and Unix, this
      * is equivalent to <code>errno</code>. For C++ and Windows, this is the
-     * value returned by
-     * <code>GetLastError()</code> or
+     * value returned by <code>GetLastError()</code> or
      * <code>WSAGetLastError()</code>.
      **/
     int error = 0;
@@ -3061,16 +3046,15 @@ module Ice {
   local exception ConnectionLostException extends SocketException {};
 
   /**
-   * This exception indicates a DNS problem. For details on the cause,
-   * {@link DNSException#error} should be inspected.
+   * This exception indicates a DNS problem. For details on the cause, {@link
+   * DNSException#error} should be inspected.
    **/
   [\\"cpp:ice_print\\"]
   local exception DNSException {
     /**
      * The error number describing the DNS problem. For C++ and Unix, this is
      * equivalent to <code>h_errno</code>. For C++ and Windows, this is the
-     * value returned by
-     * <code>WSAGetLastError()</code>.
+     * value returned by <code>WSAGetLastError()</code>.
      **/
     int error = 0;
 
@@ -3310,8 +3294,8 @@ module Ice {
 
   /**
    * This exception is raised when Ice receives a request or reply message whose
-   * size exceeds the limit specified by the
-   * <code>Ice.MessageSizeMax</code> property.
+   * size exceeds the limit specified by the <code>Ice.MessageSizeMax</code>
+   * property.
    **/
   [\\"cpp:ice_print\\"]
   local exception MemoryLimitException extends MarshalException {};
@@ -3864,16 +3848,15 @@ module IceMX {
     int inUseForIO = 0;
 
     /**
-     * The number of threads which are currently calling user code
-     * (servant dispatch, AMI callbacks, etc).
+     * The number of threads which are currently calling user code (servant
+     * dispatch, AMI callbacks, etc).
      **/
     int inUseForUser = 0;
 
     /**
      * The number of threads which are currently performing other activities.
-     * These are all other that are not counted with
-     * {@link #inUseForUser} or {@link #inUseForIO}, such as DNS lookups, garbage
-     * collection).
+     * These are all other that are not counted with {@link #inUseForUser} or
+     * {@link #inUseForIO}, such as DNS lookups, garbage collection).
      **/
     int inUseForOther = 0;
   };
@@ -3904,8 +3887,7 @@ module IceMX {
    * Provides information on child invocations. A child invocation is either
    * remote (sent over an Ice connection) or collocated. An invocation can have
    * multiple child invocation if it is retried. Child invocation metrics are
-   * embedded within
-   * {@link InvocationMetrics}.
+   * embedded within {@link InvocationMetrics}.
    **/
   class ChildInvocationMetrics extends Metrics {
     /**
@@ -4072,12 +4054,12 @@ module Ice {
      * deactivation, the object adapter stops receiving requests through its
      * endpoints. Object adapters that have been deactivated must not be
      * reactivated again, and cannot be used otherwise. Attempts to use a
-     * deactivated object adapter raise
-     * {@link ObjectAdapterDeactivatedException} however, attempts to
-     * {@link #deactivate} an already deactivated object adapter are ignored and
-     * do nothing. Once deactivated, it is possible to destroy the adapter to
-     * clean up resources and then create and activate a new adapter with the
-     * same name.
+     * deactivated object adapter raise {@link
+     * ObjectAdapterDeactivatedException} however, attempts to {@link
+     * #deactivate} an already deactivated object adapter are ignored and do
+     * nothing. Once deactivated, it is possible to destroy the adapter to clean
+     * up resources and then create and activate a new adapter with the same
+     * name.
      *
      * <p class=\\"Note\\"> After {@link #deactivate} returns, no new requests are
      * processed by the object adapter. However, requests that have been started
@@ -4093,10 +4075,9 @@ module Ice {
     [\\"cpp:noexcept\\", \\"swift:noexcept\\", \\"js:async\\"] void deactivate();
 
     /**
-     * Wait until the object adapter has deactivated. Calling
-     * {@link #deactivate} initiates object adapter deactivation, and
-     * {@link #waitForDeactivate} only returns when deactivation has been
-     * completed.
+     * Wait until the object adapter has deactivated. Calling {@link
+     * #deactivate} initiates object adapter deactivation, and {@link
+     * #waitForDeactivate} only returns when deactivation has been completed.
      *
      * @see #deactivate
      * @see #waitForHold
@@ -4201,8 +4182,8 @@ module Ice {
 
     /**
      * Like {@link #addWithUUID}, but with a facet. Calling
-     * <code>addWithUUID(servant)</code> is equivalent to calling
-     * {@link #addFacetWithUUID} with an empty facet.
+     * <code>addWithUUID(servant)</code> is equivalent to calling {@link
+     * #addFacetWithUUID} with an empty facet.
      *
      * @param servant The servant to add.
      *
@@ -4223,10 +4204,9 @@ module Ice {
     /**
      * Add a default servant to handle requests for a specific category. Adding
      * a default servant for a category for which a default servant is already
-     * registered throws
-     * {@link AlreadyRegisteredException}. To dispatch operation calls on servants,
-     * the object adapter tries to find a servant for a given Ice object identity
-     * and facet in the following order:
+     * registered throws {@link AlreadyRegisteredException}. To dispatch
+     * operation calls on servants, the object adapter tries to find a servant
+     * for a given Ice object identity and facet in the following order:
      *
      * <ol>
      *
@@ -4242,8 +4222,8 @@ module Ice {
      * regardless of the category contained in the identity.</li>
      *
      * <li>If no servant has been found by any of the preceding steps, the
-     * object adapter gives up and the caller receives
-     * {@link ObjectNotExistException} or {@link FacetNotExistException}.</li>
+     * object adapter gives up and the caller receives {@link
+     * ObjectNotExistException} or {@link FacetNotExistException}.</li>
      *
      * </ol>
      *
@@ -4262,10 +4242,9 @@ module Ice {
      * Active Servant Map.
      *
      * @param id The identity of the Ice object that is implemented by the
-     * servant. If the servant implements multiple Ice objects,
-     * {@link #remove} has to be called for all those Ice objects. Removing an identity
-     * that is not in the map throws
-     * {@link NotRegisteredException}.
+     * servant. If the servant implements multiple Ice objects, {@link #remove}
+     * has to be called for all those Ice objects. Removing an identity that is
+     * not in the map throws {@link NotRegisteredException}.
      *
      * @return The removed servant.
      *
@@ -4421,8 +4400,8 @@ module Ice {
      * object adapter tries to find a servant using this locator.</li>
      *
      * <li>If no servant has been found by any of the preceding steps, the
-     * object adapter gives up and the caller receives
-     * {@link ObjectNotExistException} or {@link FacetNotExistException}.</li>
+     * object adapter gives up and the caller receives {@link
+     * ObjectNotExistException} or {@link FacetNotExistException}.</li>
      *
      * </ol>
      *
@@ -4658,8 +4637,8 @@ module Ice {
      * Create a new object for a given object type. The type is the absolute
      * Slice type id, i.e., the id relative to the unnamed top-level Slice
      * module. For example, the absolute Slice type id for interfaces of type
-     * <code>Bar</code> in the module
-     * <code>Foo</code> is <code>\\"::Foo::Bar\\"</code>.
+     * <code>Bar</code> in the module <code>Foo</code> is
+     * <code>\\"::Foo::Bar\\"</code>.
      *
      * <p class=\\"Note\\">The leading \\"<code>::</code>\\" is required.
      *
@@ -4729,11 +4708,11 @@ module Ice {
      * Initialize the configured plug-ins. The communicator automatically
      * initializes the plug-ins by default, but an application may need to
      * interact directly with a plug-in prior to initialization. In this case,
-     * the application must set
-     * <code>Ice.InitPlugins=0</code> and then invoke {@link #initializePlugins}
-     * manually. The plug-ins are initialized in the order in which they are loaded.
-     * If a plug-in raises an exception during initialization, the communicator invokes
-     * destroy on the plug-ins that have already been initialized.
+     * the application must set <code>Ice.InitPlugins=0</code> and then invoke
+     * {@link #initializePlugins} manually. The plug-ins are initialized in the
+     * order in which they are loaded. If a plug-in raises an exception during
+     * initialization, the communicator invokes destroy on the plug-ins that
+     * have already been initialized.
      *
      * @throws InitializationException Raised if the plug-ins have already been
      * initialized.
@@ -4990,8 +4969,7 @@ module Ice {
     StringSeq getPropertyAsListWithDefault(string key, StringSeq value);
 
     /**
-     * Get all properties whose keys begins with
-     * <em>prefix</em>. If
+     * Get all properties whose keys begins with <em>prefix</em>. If
      * <em>prefix</em> is an empty string, then all properties are returned.
      *
      * @param prefix The prefix to search for (empty string if none).
@@ -5013,8 +4991,7 @@ module Ice {
     /**
      * Get a sequence of command-line options that is equivalent to this
      * property set. Each element of the returned sequence is a command-line
-     * option of the form
-     * <code>--<em>key</em>=<em>value</em></code>.
+     * option of the form <code>--<em>key</em>=<em>value</em></code>.
      *
      * @return The command line options for this property set.
      **/
@@ -5022,9 +4999,9 @@ module Ice {
 
     /**
      * Convert a sequence of command-line options into properties. All options
-     * that begin with
-     * <code>--<em>prefix</em>.</code> are converted into properties. If the prefix
-     * is empty, all options that begin with <code>--</code> are converted to properties.
+     * that begin with <code>--<em>prefix</em>.</code> are converted into
+     * properties. If the prefix is empty, all options that begin with
+     * <code>--</code> are converted to properties.
      *
      * @param prefix The property prefix, or an empty string to convert all
      * options starting with <code>--</code>.
@@ -5040,9 +5017,9 @@ module Ice {
      * Convert a sequence of command-line options into properties. All options
      * that begin with one of the following prefixes are converted into
      * properties: <code>--Ice</code>, <code>--IceBox</code>,
-     * <code>--IceGrid</code>,
-     * <code>--IcePatch2</code>, <code>--IceSSL</code>, <code>--IceStorm</code>,
-     * <code>--Freeze</code>, and <code>--Glacier2</code>.
+     * <code>--IceGrid</code>, <code>--IcePatch2</code>, <code>--IceSSL</code>,
+     * <code>--IceStorm</code>, <code>--Freeze</code>, and
+     * <code>--Glacier2</code>.
      *
      * @param options The command-line options.
      *
@@ -5271,8 +5248,8 @@ module Ice {
 
   /**
    * The interface of the admin object that allows an Ice application the attach
-   * its
-   * {@link RemoteLogger} to the {@link Logger} of this admin object's Ice communicator.
+   * its {@link RemoteLogger} to the {@link Logger} of this admin object's Ice
+   * communicator.
    **/
   interface LoggerAdmin {
     /**
@@ -5362,8 +5339,8 @@ exports[`Built-in slices Ice/Router.ice 1`] = `
 [\\"objc:prefix:ICE\\"]
 module Ice {
   /**
-   * The Ice router interface. Routers can be set either globally with
-   * {@link Communicator#setDefaultRouter}, or with <code>ice_router</code> on specific
+   * The Ice router interface. Routers can be set either globally with {@link
+   * Communicator#setDefaultRouter}, or with <code>ice_router</code> on specific
    * proxies.
    **/
   interface Router {
@@ -5481,8 +5458,8 @@ module Ice {
      * <code>locate</code> can throw any user exception. If it does, that
      * exception is marshaled back to the client. If the Slice definition for
      * the corresponding operation includes that user exception, the client
-     * receives that user exception; otherwise, the client receives
-     * {@link UnknownUserException}.
+     * receives that user exception; otherwise, the client receives {@link
+     * UnknownUserException}.
      *
      * If <code>locate</code> throws any exception, the Ice run time does
      * <em>not</em> call <code>finished</code>.
@@ -5519,8 +5496,8 @@ module Ice {
      * <code>finished</code> can throw any user exception. If it does, that
      * exception is marshaled back to the client. If the Slice definition for
      * the corresponding operation includes that user exception, the client
-     * receives that user exception; otherwise, the client receives
-     * {@link UnknownUserException}.
+     * receives that user exception; otherwise, the client receives {@link
+     * UnknownUserException}.
      *
      * If both the operation and <code>finished</code> throw an exception, the
      * exception thrown by <code>finished</code> is marshaled back to the
@@ -5639,8 +5616,7 @@ module Ice {
      * Create a new value for a given value type. The type is the absolute Slice
      * type id, i.e., the id relative to the unnamed top-level Slice module. For
      * example, the absolute Slice type id for an interface <code>Bar</code> in
-     * the module
-     * <code>Foo</code> is <code>\\"::Foo::Bar\\"</code>.
+     * the module <code>Foo</code> is <code>\\"::Foo::Bar\\"</code>.
      *
      * Note that the leading \\"<code>::</code>\\" is required.
      *
@@ -5686,13 +5662,11 @@ module Ice {
      * type.</li>
      *
      * <li>If no instance has been created, the Ice run-time looks for the
-     * default factory, which is registered with an empty type id.
-     * </li>
+     * default factory, which is registered with an empty type id. </li>
      *
      * <li>If no instance has been created by any of the preceding steps, the
      * Ice run-time looks for a factory that may have been statically generated
-     * by the language mapping for non-abstract classes.
-     * </li>
+     * by the language mapping for non-abstract classes. </li>
      *
      * </ol>
      *
@@ -5923,9 +5897,9 @@ module IceBox {
    **/
   local interface Service {
     /**
-     * Start the service. The given communicator is created by the
-     * {@link ServiceManager} for use by the service. This communicator may also
-     * be used by other services, depending on the service configuration.
+     * Start the service. The given communicator is created by the {@link
+     * ServiceManager} for use by the service. This communicator may also be
+     * used by other services, depending on the service configuration.
      *
      * <p class=\\"Note\\">The {@link ServiceManager} owns this communicator, and is
      * responsible for destroying it.
@@ -6329,9 +6303,9 @@ module IceGrid {
   };
 
   /**
-   * The IceGrid administrative interface.
-   * <p class=\\"Warning\\">Allowing access to this interface is a security risk! Please
-   * see the IceGrid documentation for further information.
+   * The IceGrid administrative interface. <p class=\\"Warning\\">Allowing access to
+   * this interface is a security risk! Please see the IceGrid documentation for
+   * further information.
    **/
   interface Admin {
     /**
@@ -7972,8 +7946,7 @@ module IceGrid {
     Ice::StringSeq envs;
 
     /**
-     * The server activation mode (possible values are \\"on-demand\\" or
-     * \\"manual\\").
+     * The server activation mode (possible values are \\"on-demand\\" or \\"manual\\").
      **/
     string activation;
 
@@ -8674,10 +8647,8 @@ module IceGrid {
   };
 
   /**
-   * *
-   * * This exception is raised if a registry lock wasn't
-   *  * acquired or is already held by a session.
-   * *
+   * * * This exception is raised if a registry lock wasn't
+   *  * acquired or is already held by a session. *
    **/
   exception AccessDeniedException {
     /**
@@ -9158,10 +9129,9 @@ module IceGrid {
 
     /**
      * Find a well-known object by type on the least-loaded node. If the
-     * registry does not know which node hosts the object
-     * (for example, because the object was registered with a direct proxy), the
-     * registry assumes the object is hosted on a node that has a load average of
-     * 1.0.
+     * registry does not know which node hosts the object (for example, because
+     * the object was registered with a direct proxy), the registry assumes the
+     * object is hosted on a node that has a load average of 1.0.
      *
      * @param type The object type.
      *
@@ -9331,9 +9301,8 @@ exports[`Built-in slices IceGrid/Session.ice 1`] = `
 module IceGrid {
   /**
    * A session object is used by IceGrid clients to allocate and release
-   * objects. Client sessions are created either via the
-   * {@link Registry} object or via the registry client <code>SessionManager</code>
-   * object.
+   * objects. Client sessions are created either via the {@link Registry} object
+   * or via the registry client <code>SessionManager</code> object.
    *
    * @see Registry
    **/
@@ -9385,8 +9354,7 @@ module IceGrid {
 
     /**
      * Release an object that was allocated using
-     * <code>allocateObjectById</code> or
-     * <code>allocateObjectByType</code>.
+     * <code>allocateObjectById</code> or <code>allocateObjectByType</code>.
      *
      * @param id The identity of the object to release.
      *
@@ -9403,7 +9371,8 @@ module IceGrid {
     /**
      * Set the allocation timeout. If no objects are available for an allocation
      * request, a call to <code>allocateObjectById</code> or
-     * <code>allocateObjectByType</code> will block for the duration of this timeout.
+     * <code>allocateObjectByType</code> will block for the duration of this
+     * timeout.
      *
      * @param timeout The timeout in milliseconds.
      **/
@@ -9447,8 +9416,8 @@ module IceGrid {
      *
      * @param user The value of the server descriptor's <code>user</code>
      * attribute. If this attribute is not defined, and the server's activation
-     * mode is <code>session</code>, the default value of
-     * <code>user</code> is the session identifier.
+     * mode is <code>session</code>, the default value of <code>user</code> is
+     * the session identifier.
      *
      * @return The user account name.
      *

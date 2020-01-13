@@ -15,7 +15,7 @@ export function printDoc(doc: string): Doc {
             const docs: Doc[] = [];
 
             for (const [i, line_] of paragraph.split('\n').entries()) {
-              if (i > 0 && /^[^A-Za-z]/.test(line_)) {
+              if (i > 0 && /^[@ ]/.test(line_)) {
                 docs.push(hardline);
               }
 
