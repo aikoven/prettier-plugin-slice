@@ -1155,7 +1155,7 @@ module Ice {
    * The actual encoding format for the string is the same for all modes: you
    * don't need to specify an encoding format or mode when reading such a string.
    **/
-  enum ToStringMode {
+  local enum ToStringMode {
     /**
      * Characters with ordinal values greater than 127 are kept as-is in the resulting string.
      * Non-printable ASCII characters with ordinal values 127 and below are encoded as \\\\\\\\t, \\\\\\\\n (etc.)
@@ -1223,7 +1223,7 @@ module Ice {
    * The batch compression option when flushing queued batch requests.
    **/
   [\\"cpp:scoped\\", \\"objc:scoped\\"]
-  enum CompressBatch {
+  local enum CompressBatch {
     /**
      * Compress the batch requests.
      **/
@@ -1302,7 +1302,7 @@ module Ice {
     [\\"swift:noexcept\\"] void heartbeat(Connection con);
   };
 
-  enum ACMClose {
+  local enum ACMClose {
     CloseOff,
     CloseOnIdle,
     CloseOnInvocation,
@@ -1310,7 +1310,7 @@ module Ice {
     CloseOnIdleForceful
   };
 
-  enum ACMHeartbeat {
+  local enum ACMHeartbeat {
     HeartbeatOff,
     HeartbeatOnDispatch,
     HeartbeatOnIdle,
@@ -1327,7 +1327,7 @@ module Ice {
    * Determines the behavior when manually closing a connection.
    **/
   [\\"cpp:scoped\\", \\"objc:scoped\\"]
-  enum ConnectionClose {
+  local enum ConnectionClose {
     /**
      * Close the connection immediately without sending a close connection protocol message to the peer
      * and waiting for the peer to acknowledge it.
@@ -1932,7 +1932,7 @@ module Ice {
    * Determines the order in which the Ice run time uses the endpoints
    * in a proxy when establishing a connection.
    **/
-  enum EndpointSelectionType {
+  local enum EndpointSelectionType {
     Random,
     Ordered
   };
@@ -2180,7 +2180,7 @@ module Ice {
      * The thread state enumeration keeps track of the different possible
      * states of Ice threads.
      **/
-    enum ThreadState {
+    local enum ThreadState {
       /**
        * The thread is idle.
        **/
@@ -2223,7 +2223,7 @@ module Ice {
     /**
      * The state of an Ice connection.
      **/
-    enum ConnectionState {
+    local enum ConnectionState {
       /**
        * The connection is being validated.
        **/

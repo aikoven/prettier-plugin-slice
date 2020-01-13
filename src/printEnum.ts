@@ -18,6 +18,7 @@ export function printEnum(
     val.doc != null ? concat([printDoc(val.doc), hardline]) : '',
     groupConcat([
       val.metadata != null ? concat([printMetadata(val.metadata), line]) : '',
+      val.local ? 'local ' : '',
       'enum ',
       val.name,
       groupConcat([
