@@ -1162,6 +1162,7 @@ module Ice {
      * or \\\\\\\\unnnn.
      **/
     Unicode,
+
     /**
      * Characters with ordinal values greater than 127 are encoded as universal character names in
      * the resulting string: \\\\\\\\unnnn for BMP characters and \\\\\\\\Unnnnnnnn for non-BMP characters.
@@ -1169,6 +1170,7 @@ module Ice {
      * or \\\\\\\\unnnn.
      **/
     ASCII,
+
     /**
      * Characters with ordinal values greater than 127 are encoded as a sequence of UTF-8 bytes using
      * octal escapes. Characters with ordinal values 127 and below are encoded as \\\\\\\\t, \\\\\\\\n (etc.) or
@@ -1228,10 +1230,12 @@ module Ice {
      * Compress the batch requests.
      **/
     Yes,
+
     /**
      * Don't compress the batch requests.
      **/
     No,
+
     /**
      * Compress the batch requests if at least one request was
      * made on a compressed proxy.
@@ -1635,7 +1639,9 @@ module Ice {
 
   enum OperationMode {
     Normal,
+
     Nonmutating,
+
     Idempotent
   };
 
@@ -2185,18 +2191,21 @@ module Ice {
        * The thread is idle.
        **/
       ThreadStateIdle,
+
       /**
        * The thread is in use performing reads or writes for Ice
        * connections. This state is only for threads from an Ice thread
        * pool.
        **/
       ThreadStateInUseForIO,
+
       /**
        * The thread is calling user code (servant implementation, AMI
        * callbacks). This state is only for threads from an Ice thread
        * pool.
        **/
       ThreadStateInUseForUser,
+
       /**
        * The thread is performing other internal activities (DNS
        * lookups, timer callbacks, etc).
@@ -2228,19 +2237,23 @@ module Ice {
        * The connection is being validated.
        **/
       ConnectionStateValidating,
+
       /**
        * The connection is holding the reception of new messages.
        **/
       ConnectionStateHolding,
+
       /**
        * The connection is active and can send and receive messages.
        **/
       ConnectionStateActive,
+
       /**
        * The connection is being gracefully shutdown and waits for the
        * peer to close its end of the connection.
        **/
       ConnectionStateClosing,
+
       /**
        * The connection is closed and waits for potential dispatch to be
        * finished before being destroyed and detached from the observer.
@@ -5107,14 +5120,17 @@ module Ice {
      * The {@link Logger} received a print message.
      **/
     PrintMessage,
+
     /**
      * The {@link Logger} received a trace message.
      **/
     TraceMessage,
+
     /**
      * The {@link Logger} received a warning message.
      **/
     WarningMessage,
+
     /**
      * The {@link Logger} received an error message.
      **/
@@ -5987,6 +6003,7 @@ module IceGrid {
      * The server is not running.
      **/
     Inactive,
+
     /**
      * The server is being activated and will change to the active
      * state when the registered server object adapters are activated
@@ -5994,23 +6011,28 @@ module IceGrid {
      * expires.
      **/
     Activating,
+
     /**
      * The activation timed out state indicates that the server
      * activation timed out.
      **/
     ActivationTimedOut,
+
     /**
      * The server is running.
      **/
     Active,
+
     /**
      * The server is being deactivated.
      **/
     Deactivating,
+
     /**
      * The server is being destroyed.
      **/
     Destroying,
+
     /**
      * The server is destroyed.
      **/
@@ -9085,10 +9107,12 @@ module IceGrid {
      * Sample every minute.
      **/
     LoadSample1,
+
     /**
      * Sample every five minutes.
      **/
     LoadSample5,
+
     /**
      * Sample every fifteen minutes.
      **/

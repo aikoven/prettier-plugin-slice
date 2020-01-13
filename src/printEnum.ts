@@ -26,7 +26,7 @@ export function printEnum(
         indent(
           concat([
             line,
-            join(concat([',', hardline]), path.map(print, 'enums')),
+            join(hardline, path.map(print, 'enums')),
           ]),
         ),
         line,
