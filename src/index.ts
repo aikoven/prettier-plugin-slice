@@ -41,7 +41,8 @@ type Node =
 const plugin: Plugin = {
   languages: [
     {
-      name: 'slice',
+      name: 'Slice',
+      vscodeLanguageIds: ['slice'],
       extensions: ['.ice'],
       parsers: ['slice2json'],
     },
