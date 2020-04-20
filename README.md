@@ -8,7 +8,7 @@ Prettier plugin for the Slice language.
 
 ## Configuration
 
-Add this to you Prettier config:
+Add this to your Prettier config:
 
 ```json
 {
